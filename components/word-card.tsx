@@ -20,7 +20,7 @@ export default function WordCard({ word }: WordCardProps) {
           <span className="text-2xl font-bold text-slate-800 dark:text-slate-100">
             {word.word}
           </span>
-          <Badge variant="outline" className="text-sm font-normal dark:text-slate-100">
+          <Badge variant="outline" className="text-sm font-normal text-black dark:text-slate-100">
             {word.meaning.split(",")[0]}
           </Badge>
         </CardTitle>
