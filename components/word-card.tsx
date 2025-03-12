@@ -47,53 +47,37 @@ export default function WordCard({ word }: WordCardProps) {
 
                   {context.usage && (
                     <div className="mt-2">
-                      <p className="text-slate-600 dark:text-slate-300 font-medium">
-                        Usage:
-                      </p>
-                      <p className="text-slate-600 dark:text-slate-300">
-                        {context.usage}
-                      </p>
+                      <p className="text-slate-600 dark:text-slate-300 font-medium">Usage:</p>
+                      <ul className="list-disc list-inside text-slate-500 dark:text-slate-400">
+                        {context.usage.map((use, i) => (
+                          <li key={i}>{use}</li>
+                        ))}
+                      </ul>
                     </div>
                   )}
 
                   {context.usage1 && (
-                    <div className="mt-2">
-                      <p className="text-slate-600 dark:text-slate-300 font-medium">
-                        Usage:
-                      </p>
-                      <p className="text-slate-600 dark:text-slate-300">
-                        {context.usage1.usage}
-                      </p>
-                      <p className="text-slate-500 dark:text-slate-400 italic mt-1">
-                        Example: {context.usage1.example}
-                      </p>
+                    <div className="mt-2 p-2 bg-slate-100 dark:bg-slate-800 rounded-md">
+                      <p className="text-slate-600 dark:text-slate-300 font-medium">Usage:</p>
+                      <p className="text-slate-600 dark:text-slate-300">{context.usage1.usage}</p>
+                      <p className="text-slate-500 dark:text-slate-400 italic mt-1">Example: {context.usage1.example}</p>
                     </div>
                   )}
 
-                  {context.usage2 && (
-                    <div className="mt-2">
-                      <p className="text-slate-600 dark:text-slate-300 font-medium">
-                        Additional Usage:
-                      </p>
-                      <p className="text-slate-600 dark:text-slate-300">
-                        {context.usage2.usage}
-                      </p>
-                      <p className="text-slate-500 dark:text-slate-400 italic mt-1">
-                        Example: {context.usage2.example}
-                      </p>
+                  {context.notUsed && (
+                    <div className="mt-2 p-2 bg-red-100 dark:bg-red-800 rounded-md">
+                      <p className="text-red-600 dark:text-red-300 font-medium">Not Used:</p>
+                      <p className="text-red-600 dark:text-red-300">{context.notUsed.where}</p>
+                      <p className="text-red-500 dark:text-red-400 italic mt-1">Example: {context.notUsed.example}</p>
                     </div>
                   )}
 
                   {context.examples && (
                     <div className="mt-2">
-                      <p className="text-slate-600 dark:text-slate-300 font-medium">
-                        Examples:
-                      </p>
+                      <p className="text-slate-600 dark:text-slate-300 font-medium">Examples:</p>
                       <ul className="list-disc list-inside space-y-1 text-slate-500 dark:text-slate-400">
                         {context.examples.map((example, i) => (
-                          <li key={i} className="italic">
-                            {example}
-                          </li>
+                          <li key={i} className="italic">{example}</li>
                         ))}
                       </ul>
                     </div>

@@ -33,7 +33,7 @@ export default function WordList({ words, searchQuery }: WordListProps) {
 
       {searchQuery && (
         <div className="mb-6">
-          <h2 className="text-lg font-medium text-slate-700 dark:text-slate-300 mb-2">
+          <h2 className="text-lg font-medium text-slate-700 dark:text-black mb-2">
             Words starting with &quot;{searchQuery}&quot;
           </h2>
           <p className="text-slate-500 dark:text-slate-400 mb-4">
